@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100&family=Edu+VIC+WA+NT+Beginner:wght@400;500&family=Grape+Nuts&family=Hurricane&family=Inspiration&family=Libre+Bodoni&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Passions+Conflict&family=Quicksand:wght@300&family=Raleway:wght@100&family=Roboto:wght@100&family=Tapestry&display=swap');
+
+:root{
+    --white: #fff;
+    --grey: #333;
+    --orange: #ffa500;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0; padding: 0;
+    border: 0; outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+*::selection{
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.btn{
+    display: inline-block;
+    padding: .4rem .6rem;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: .5rem;
+    font-size: 1.1rem;
+    border: 1px solid var(--orange);
+}
+
+.btn:hover{
+    background-color: var(--white);
+    color: var(--orange);
+}
+
+section{
+    padding: 2rem 5%;
+}
+
+.heading{
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.heading span{
+    font-size: 2.5rem;
+    color: var(--orange);
+    padding: .3rem .5rem;
+    background-color: #ffa00033;
+    border-radius: .5rem;
+}
+
+.heading span.space{
+    background: none;
+}
+
+/* ...................header.............. */
+
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--grey);
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .bars{
+    display: none;
+}
+
+header .logo{
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header .logo span{
+    color: var(--orange);
+}
+
+header .navbar a{
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-left: .5rem;
+}
+
+header .navbar a:hover{
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+header .icon i{
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+header .icon i:hover{
+    color: var(--orange);
+}
+
+header .search_bar{
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--grey);
+    padding: .5rem;
+    border-top: 1px solid #666;
+    display: flex;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+header .search_bar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+header .search_bar input{
+    width: 100%;
+    padding: .5rem;
+    color: var(--grey);
+    font-size: 1rem;
+    text-transform: none;
+    border-radius: .5rem;
+    margin-right: .5rem;
+}
+
+header .search_bar label{
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+/* ...........login_form.......... */
+
+.login_form{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1001;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scaleY(0);
+}
+
+.login_form.active{
+    transform: scaleY(1);
+}
+
+.login_form i{
+    position: absolute;
+    top: 6rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.login_form i:hover{
+    color: var(--orange);
+}
+
+.login_form  form{
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: .5rem;
+}
+
+.login_form  form h2{
+    font-size: 2.5rem;
+    color: var(--grey);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.login_form  form input[type=email],
+.login_form  form input[type=password]{
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid var(--grey);
+    color: var(--grey);
+    font-size: 1rem;
+    border-radius: .5rem;
+    text-transform: none;
+    margin: .3rem 0;
+}
+
+.login_form  form input:focus{
+    border-color: var(--orange);
+}
+
+.login_form  form .btn{
+    width: 100%;
+    margin: .3rem 0;
+}
+
+.login_form  form label{
+    font-size: .8rem;
+    color: var(--grey);
+}
+
+.login_form  form p{
+    font-size: .9rem;
+    color: var(--grey);
+    margin: .1rem 0;
+}
+
+.login_form  form p a{
+    color: var(--orange);
+}
+
+.login_form  form p a:hover{
+    color: var(--grey);
+    text-decoration: underline;
+}
+
+/* .............home......... */
+
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home video{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home  .content{
+    text-align: center;
+}
+
+.home  .content h1{
+    font-size: 2.5rem;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.home  .content p{
+    font-size: 1.5rem;
+    color: var(--white);
+    margin: .5rem 0;
+}
+
+.home .controls{
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: .5rem;
+    padding: .5rem;
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+}
+
+.home .controls .vid_btn{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    margin-left: .3rem;
+}
+
+.home .controls .vid_btn.active{
+    background-color: var(--orange);
+}
+
+
+/* ...............book_now............. */
+
+.book .inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book .inner .image{
+    width: 49%;
+}
+
+.book .inner .image img{
+    width: 100%;
+    height: 100%;
+}
+
+.book .inner form{
+    width: 49%;
+    padding: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .4);
+    border-radius: .5rem;
+}
+
+.book .inner form .inputBox{
+    width: 100%;
+    margin: .3rem 0;
+}
+
+.book .inner form .inputBox h3{
+    font-size: 1.2rem;
+    color: var(--grey);
+    margin: .2rem 0;
+}
+
+.book .inner form .inputBox input{
+    width: 100%;
+    padding: .5rem;
+    border-radius: .5rem;
+    border: 1px solid rgba(0, 0, 0, .4);
+    text-transform: none;
+    color: var(--grey);
+    font-size: 1rem;
+}
+
+.book .inner form .btn{
+    margin: .5rem 0;
+    font-size: 1rem;
+}
+
+
+/* ..............packages................. */
+
+.packages .inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.packages .inner .box{
+    width: 32%;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .4);
+}
+
+.packages .inner .box:hover{
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .4);
+}
+
+.packages .inner .box img{
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+}
+
+.packages .inner .box .content{
+    padding: 1rem;
+}
+
+.packages .inner .box .content h3{
+    font-size: 1.3rem;
+    color: var(--grey);
+}
+
+.packages .inner .box .content i{
+    color: var(--orange);
+}
+
+.packages .inner .box .content p{
+    font-style: italic;
+    margin: .3rem 0;
+    font-size: 1.1rem;
+}
+
+.packages .inner .box .content .stars{
+    margin: .3rem 0;
+}
+
+.packages .inner .box .content .stars i{
+    font-size: .9rem;
+}
+
+.packages .inner .box .content .price{
+    color: var(--grey);
+}
+
+.packages .inner .box .content .price span{
+    text-decoration: line-through;
+}
+
+.packages .inner .box .content .btn{
+    font-size: 1rem;
+    margin: .3rem 0;
+}
+
+/* ..............services............. */
+
+.services .inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0;
+}
+
+.services .inner .box{
+    width: 24%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.services .inner .box:hover{
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .4);
+}
+
+.services .inner .box i{
+    font-size: 2rem;
+    color: var(--orange);
+}
+
+.services .inner .box h3{
+    font-size: 1.3rem;
+    color: var(--grey);
+    margin: .3rem 0;
+}
+
+.services .inner .box p{
+    font-size: 1.1rem;
+    color: var(--grey);
+}
+
+/* .........gallery........... */
+
+.gallery .inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.gallery .inner .block{
+    width: 24%;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery .inner .block:hover .box{
+    top: 0; left: 0;
+}
+
+.gallery .inner .block img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery .inner .block .box{
+    position: absolute;
+    top: -100%; left: -100%;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.gallery .inner .block .box h3{
+    font-size: 1.3rem;
+    color: var(--orange);
+}
+
+.gallery .inner .block .box p{
+    font-size: 1.1rem;
+    color: var(--white);
+    margin: .3rem 0;
+}
+
+.gallery .inner .block .box .btn{
+    font-size: .9rem;
+}
+
+/* .........contact.......... */
+
+.contact .inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact .inner .image{
+    width: 49%;
+}
+
+.contact .inner .image img{
+    width: 100%;
+    height: 100%;
+}
+
+.contact .inner form{
+    width: 49%;
+    padding: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .4);
+    border-radius: .5rem;
+}
+
+.contact .inner form .inputBox{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact .inner form .inputBox input{
+    width: 49%;
+    padding: .5rem;
+    background-color: rgba(0, 0, 0, .1);
+    color: var(--grey);
+    font-size: 1rem;
+    text-transform: none;
+    border-radius: .5rem;
+    margin: .3rem 0;
+}
+
+.contact .inner form textarea{
+    resize: none;
+    width: 100%;
+    background: rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    padding: 1rem;
+    margin: .3rem 0;
+}
+
+/* ..............footer......... */
+
+footer{
+    background: var(--grey);
+    padding: 2rem 5%;
+}
+
+footer .inner{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 2px solid #666;
+    padding: 1rem 0;
+}
+
+footer .inner .box{
+    width: 24%;
+}
+
+footer .inner .box h3{
+    font-size: 1.3rem;
+    color: var(--white);
+    margin: .5rem 0;
+}
+
+footer .inner .box p{
+    font-size: .8rem;
+    padding-right: 1.5rem;
+    color: #666;
+}
+
+footer .inner .box a{
+    display: block;
+    color: var(--white);
+    margin: .3rem 0;
+}
+
+footer .inner .box a:hover{
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+footer h6{
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+footer h6 a{
+    color: var(--orange);
+}
+
+footer h6 a:hover{
+    color: var(--white);
+    text-decoration: underline;
+}
+
+
+/* .......media....... */
+
+@media (max-width: 1200px){
+    html{
+        font-size: 90%;
+    }
+
+    .gallery .inner .block{
+        width: 23%;
+    }
+}
+
+@media (max-width: 979px){
+    header .bars{
+        display: block;
+        font-size: 1.5rem;
+        color: var(--white);
+    }
+
+    header .bars:hover{
+        color: var(--orange);
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: var(--grey);
+        
+    }
+
+    header .navbar a{
+        display: block;
+        padding: .5rem;
+        margin: .5rem .5rem;
+        border-radius: .5rem;
+        background-color: rgba(0, 0, 0, .4);
+        
+    }
+
+    header{
+        position: relative;
+    }
+
+    /* ...... ays hatvacum Ani jan headeri positione darcreci fixdic relative vor chcacker myus sectionner tesaneli lineyin popoxutyunnere */
+
+    .packages .inner .box img{
+        width: 100%;
+        height: 13rem;
+    }
+
+    .packages .inner .box .content p{
+        font-size: 1rem;
+    }
+
+    .services .inner .box h3{
+        font-size: 1.2rem;
+    }
+
+    .services .inner .box p{
+        font-size: 1rem;
+    }
+
+    .gallery .inner .block .box p{
+        font-size: .9rem;
+    }
+
+    .contact .inner form textarea{
+        width: 100%;
+        height: 10rem;
+    }
+    footer .inner .box h3{
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (max-width: 820px){
+
+    .packages .inner .box {
+        width: 31%;
+    } 
+
+    .packages .inner .box img{
+        width: 100%;
+        height: 10rem;
+    }
+
+    .packages .inner .box .content h3{
+        font-size: 1.2rem;
+    }
+
+    .packages .inner .box .content p{
+        font-size: .9rem;
+    }
+
+    .packages .inner .box .content .btn{
+        font-size: .8rem;
+    }
+
+    .services .inner .box h3{
+        font-size: 1.1rem;
+    }
+
+    .services .inner .box p{
+        font-size: .9rem;
+    }
+
+    .gallery .inner .block .box h3{
+        font-size: 1rem;
+    }
+
+    .gallery .inner .block .box p{
+        font-size: .8rem
+    }
+
+    .gallery .inner .block .box .btn{
+        font-size: .7rem;
+    }
+}
+
+@media (max-width: 748px){
+    .heading span{
+        font-size: 2rem;
+    }
+
+
+    .gallery .inner .block .box{
+        text-align: center;
+    }
+
+    .gallery .inner .block .box p{
+        font-size: .7rem;
+        
+    }
+
+    .gallery .inner .block .box .btn{
+        font-size: .7rem;
+        padding: .3rem .5rem;
+    }
+
+    footer .box h3{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 616px){
+    .heading span{
+        font-size: 2rem;
+    }
+
+    .packages  .inner .box .content h3{
+        font-size: 1rem;
+    }
+
+    .packages .inner .box .content p{
+        font-size: .8rem;
+    }
+
+    .packages .inner .box .content .stars i{
+        font-size: .7rem;
+    }
+
+    .services .inner  .box i{
+        font-size: 1.5rem;
+    }
+
+    .services .inner .box h3{
+        font-size: 1.1rem;
+    }
+
+    .services .inner .box p{
+        font-size: .9rem;
+    }
+
+    .gallery .inner .block{
+        width: 22%;
+    }
+
+    .gallery  .inner .block .box h3{
+        font-size: .9rem;
+    }
+
+    .gallery .inner .block .box p{
+        font-size: .7rem;
+    }
+
+    .gallery .inner .block   .box .btn{
+        font-size: .6rem;
+    }
+
+    .contact .inner form .btn{
+        font-size: .9rem;
+    }
+
+    footer .inner .box h3{
+        font-size: 1.1rem;
+    }
+
+    footer .inner .box p{
+        font-size: .8rem;
+    }
+
+    footer .inner  .box a{
+        font-size: .8rem;
+    }
+}
